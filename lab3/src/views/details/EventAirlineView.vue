@@ -22,3 +22,16 @@ defineProps({
 </template>
 
 <style scoped>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.airline-body {
+  line-height: 36pt;
+  margin-top: 2rem;
+}
+span {
+  font-weight: bold;
+}
+</style>
