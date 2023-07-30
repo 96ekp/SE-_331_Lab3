@@ -1,5 +1,4 @@
 <template>
-  <!-- <RouterLink class="event-link" :to="{ name: 'event-detail', params: { id: event?.id } }"> -->
   <RouterLink class="event-link" :to="{ name: 'event-detail', params: { id: event?.id } }">
     <article>
       <div class="card-wrapper">
