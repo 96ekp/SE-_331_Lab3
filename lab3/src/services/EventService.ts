@@ -15,7 +15,6 @@ export default {
   getEvent(perPage: number, page: number): Promise<AxiosResponse<CardItem[]>> {
     return apiClient.get<CardItem[]>('/passenger?_page=' + page + '&_limit=' + perPage)
   },
-
   getEventById(id: number): Promise<AxiosResponse<CardItem>> {
     return apiClient.get<CardItem>('passenger/' + id.toString())
   },
