@@ -1,27 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { type CardItem } from '@/type'
-import EventService from '@/services/EventService'
-import { useRouter } from 'vue-router'
-
-const event = ref<CardItem | null>(null)
-const props = defineProps({
-  id: String
+import type { PropType } from 'vue'
+defineProps({
+  event: {
+    type: Object as PropType<CardItem>,
+    require: true
+  }
 })
-// const router = useRouter()
-
-EventService.getEventById(Number(props.id))
-  .then((response) => {
-    event.value = response.data
-  })
-  .catch((error) => {
-    console.log(error)
-    // if (error.response && error.response.status === 404) {
-    //     router.push({ name: '404-resource', params: { resource: 'event' } })
-    // } else {
-    //     router.push({ name: 'network-error' })
-    // }
-  })
 </script>
 
 <template>
@@ -48,7 +33,7 @@ EventService.getEventById(Number(props.id))
 }
 .card-body {
   line-height: 36pt;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 span {
   font-weight: bold;

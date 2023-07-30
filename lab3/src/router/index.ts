@@ -22,9 +22,23 @@ const router = createRouter({
     },
     {
       path: '/passenger/:id',
-      name: 'event-detail',
-      component: EventDetailView,
-      props: true
+      name: 'event-layout',
+      component: EventLayoutView,
+      props: true,
+      children: [
+        {
+          path: '',
+          name: 'event-detail',
+          component: EventDetailView,
+          props: true
+        },
+        {
+          path: 'airline',
+          name: 'event-airline',
+          component: EventAirlineView,
+          props: true
+        }
+      ]
     }
   ]
 })
