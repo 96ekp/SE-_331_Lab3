@@ -96,5 +96,17 @@ router.beforeEach(() => {
 router.afterEach(() => {
   NProgress.done()
 })
+  // Add the scrollBehavior option
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // If a savedPosition is available, use it
+      return savedPosition
+    } else {
+      // Otherwise, scroll to the top of the page
+      return { top: 0 }
+    }
+  }
+
+  // ...
 
 export default router
