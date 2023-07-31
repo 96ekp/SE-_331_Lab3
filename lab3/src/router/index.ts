@@ -87,15 +87,7 @@ const router = createRouter({
       component: NotFoundView,
       props: true
     }
-  ]
-})
-router.beforeEach(() => {
-  NProgress.start()
-})
-
-router.afterEach(() => {
-  NProgress.done()
-})
+  ],
   // Add the scrollBehavior option
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -106,7 +98,15 @@ router.afterEach(() => {
       return { top: 0 }
     }
   }
+})
+router.beforeEach(() => {
+  NProgress.start()
+})
 
-  // ...
+router.afterEach(() => {
+  NProgress.done()
+})
+
+// ...
 
 export default router
